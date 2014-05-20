@@ -11,8 +11,14 @@ $this->menu=array(
 	array('label'=>'List Autopart', 'url'=>array('index')),
 	array('label'=>'Create Autopart', 'url'=>array('create')),
 	array('label'=>'Update Autopart', 'url'=>array('update', 'id'=>$model->autopart_id)),
-	array('label'=>'Delete Autopart', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->autopart_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Autopart', 'url'=>array('admin')),
+	array('label'=>'Delete Autopart',
+        'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->autopart_id),'confirm'=>'Are you sure you want to delete this item?'),
+        'visible' => Yii::app()->user->name == 'admin'
+    ),
+	array('label'=>'Manage Autopart',
+        'url'=>array('admin'),
+        'visible' => Yii::app()->user->name == 'admin'
+    ),
 );
 ?>
 

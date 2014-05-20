@@ -6,15 +6,16 @@ $this->pageTitle=Yii::app()->name;
 
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+<p> Курсовой проект студентов МГТУ МИРЭА группы ИСБВ-3-13<br>
+    Ефимьевой Анастасии (131317) и Ивановой Дарьи (131319). </p>
 
-<p>You may change the content of this page by modifying the following two files:</p>
+<p> <a href="https://github.com/kranknif/Autoparts">Листинг</a> проекта. </p>
+
+<p> Задача этого сайта - предоставление пользователям информации об автозапчастях <i>(autoparts)</i>, содержащейся в базе данных, <br>
+ с возможностью создания, редактирования и удаления запчастей для некоторых категорий пользователей, а именно:</p>
+
 <ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
+    <li> все пользователи могут осуществлять поиск по запчастям;</li>
+    <li> пользователь <b>demo</b> может создавать <i>(create)</i> и редактировать <i>(update)</i> запчасти;</li>
+    <li> пользователь <b>admin</b> может все выше перечисленное <i>(manage)</i>, а также удалять <i>(delete)</i> запчати.</li>
 </ul>
-
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>

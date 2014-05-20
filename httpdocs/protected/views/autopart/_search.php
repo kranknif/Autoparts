@@ -16,6 +16,11 @@
 		<?php echo $form->textField($model,'autopart_id'); ?>
 	</div>
 
+    <div class="row">
+        <?php echo $form->label($model,'name'); ?>
+        <?php echo $form->textField($model,'name'); ?>
+    </div>
+
 	<div class="row">
 		<?php echo $form->label($model,'parttype_id'); ?>
 		<?php echo $form->textField($model,'parttype_id'); ?>
@@ -26,15 +31,6 @@
 		<?php echo $form->textField($model,'car_id'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>50,'maxlength'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'quantity'); ?>
-		<?php echo $form->textField($model,'quantity'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'producer_id'); ?>
@@ -42,14 +38,14 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'description'); ?>
-		<?php echo $form->textField($model,'description',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->label($model,'price_min'); ?>
+		<?php echo $form->textField($model,'price_min', array('size'=>3,'maxlength'=>5)); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'price'); ?>
-		<?php echo $form->textField($model,'price'); ?>
-	</div>
+    <div class="row">
+        <?php echo $form->label($model,'price_max'); ?>
+        <?php echo $form->textField($model,'price_max', array('size'=>3,'maxlength'=>5)); ?>
+    </div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

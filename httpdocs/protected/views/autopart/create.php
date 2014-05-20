@@ -9,7 +9,10 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Autopart', 'url'=>array('index')),
-	array('label'=>'Manage Autopart', 'url'=>array('admin')),
+	array('label'=>'Manage Autopart',
+        'url'=>array('admin'),
+        'visible' => Yii::app()->user->name == 'admin'
+    ),
 );
 ?>
 
