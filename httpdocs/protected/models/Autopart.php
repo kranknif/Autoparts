@@ -18,6 +18,9 @@ class Autopart extends CActiveRecord
 {
     public $price_min = null;
     public $price_max = null;
+    public $parttype_name = null;
+    public $car_model = null;
+    public $producer_name = null;
 
     /**
      * @return string the associated database table name
@@ -40,7 +43,7 @@ class Autopart extends CActiveRecord
             array('name, description', 'length', 'max' => 50),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('autopart_id, parttype_id, car_id, name, quantity, producer_id, description, price, price_min, price_max', 'safe', 'on' => 'search'),
+            array('autopart_id, name, quantity, producer_name, description, price, price_min, price_max, parttype_name, car_model', 'safe', 'on' => 'search'),
         );
     }
 
@@ -65,11 +68,11 @@ class Autopart extends CActiveRecord
     {
         return array(
             'autopart_id' => 'Autopart id',
-            'parttype_id' => 'Parttype',
-            'car_id' => 'Car',
+            'parttype_name' => 'Parttype name',
+            'car_model' => 'Car model',
             'name' => 'Name',
             'quantity' => 'Quantity',
-            'producer_id' => 'Producer',
+            'producer_name' => 'Producer name',
             'description' => 'Description',
             'price' => 'Price',
             'price_min' => 'Price min',
@@ -95,12 +98,14 @@ class Autopart extends CActiveRecord
 
         $criteria = new CDbCriteria;
 
+        $criteria->with = array('parttype', 'car', 'producer');
+
         $criteria->compare('autopart_id', $this->autopart_id);
-        $criteria->compare('parttype_id', $this->parttype_id);
-        $criteria->compare('car_id', $this->car_id);
-        $criteria->compare('name', $this->name, true);
+        $criteria->compare('parttype.name', $this->parttype_name, true);
+        $criteria->compare('car.model', $this->car_model, true);
+        $criteria->compare('t.name', $this->name, true);
         $criteria->compare('quantity', $this->quantity);
-        $criteria->compare('producer_id', $this->producer_id);
+        $criteria->compare('producer.name', $this->producer_name, true);
         $criteria->compare('description', $this->description, true);
         $criteria->compare('price', $this->price);
 

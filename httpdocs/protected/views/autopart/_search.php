@@ -22,20 +22,21 @@
     </div>
 
 	<div class="row">
-		<?php echo $form->label($model,'parttype_id'); ?>
-		<?php echo $form->textField($model,'parttype_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'car_id'); ?>
-		<?php echo $form->textField($model,'car_id'); ?>
+		<?php echo $form->label($model,'parttype_name'); ?>
+		<?php echo $form->textField($model,'parttype_name'); ?>
 	</div>
 
 
-	<div class="row">
-		<?php echo $form->label($model,'producer_id'); ?>
-		<?php echo $form->textField($model,'producer_id'); ?>
-	</div>
+    <div class="row">
+        <?php echo $form->label($model,'car_model'); ?>
+        <?php echo $form->textField($model,'car_model'); ?>
+    </div>
+
+
+    <div class="row">
+        <?php echo $form->label($model,'producer_name'); ?>
+        <?php echo $form->textField($model,'producer_name'); ?>
+    </div>
 
 	<div class="row">
 		<?php echo $form->label($model,'price_min'); ?>
