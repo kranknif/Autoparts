@@ -40,7 +40,8 @@ class Autopart extends CActiveRecord
         return array(
             array('parttype_id, car_id, name, quantity, producer_id, description, price', 'required'),
             array('parttype_id, car_id, quantity, producer_id, price', 'numerical', 'integerOnly' => true),
-            array('name, description', 'length', 'max' => 50),
+            array('name, description', 'length', 'max' => 100),
+            array ('price, quantity','numerical', 'min' => 0 ),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('autopart_id, name, quantity, producer_name, description, price, price_min, price_max, parttype_name, car_model', 'safe', 'on' => 'search'),

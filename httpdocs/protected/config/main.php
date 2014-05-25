@@ -56,8 +56,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=autoparts',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'autoparts',
+			'password' => 'TJcuY49cnB4PRBcn',
 			'charset' => 'utf8',
 		),
 
